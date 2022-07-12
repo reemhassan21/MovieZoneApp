@@ -56,7 +56,7 @@ export const Router = () => {
                         style={{
                           fontSize: 27,
                           fontWeight: 'bold',
-                          color: '#B22727',
+                          color: '#DF7861',
                         }}>
                         MovieZone
                       </Text>
@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
     height: '35%',
     borderBottomRightRadius: 25,
     borderTopLeftRadius: 25,
-    borderWidth: 3,
-    borderColor: '#1F4690',
+    borderWidth: 2,
+    borderColor: '#DF7861',
   },
   container: {
     width: '100%',
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
   },
   btnTxt: {
-    color: '#1F4690',
+    color: '#3330E4',
     marginTop: '8%',
     textAlign: 'center',
     fontSize: 30,
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderWidth: 2,
     borderColor: '#ABC9FF',
-    borderBottomColor: '#3330E4',
+    borderBottomColor: '#DF7861',
   },
 });
 /*
