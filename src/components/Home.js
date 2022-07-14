@@ -15,7 +15,7 @@ import axios from 'axios';
 import {addMovie} from '../../Utils/database.js';
 import LinearGradient from 'react-native-linear-gradient';
 
-export const Home = () => {
+export const Home = ({navigation}) => {
   const {
     isLoading: topLoading,
     error: topError,
@@ -203,6 +203,7 @@ export const Home = () => {
                       source={{uri: imgURL + item.poster_path}}
                     />
                   </View>
+                  <View style={styles.btnContainer}>
                   <TouchableOpacity
                     style={styles.btn}
                     onPress={() => {
@@ -215,7 +216,7 @@ export const Home = () => {
                     }}>
                     <Text
                       style={{
-                        color: '#3330E4',
+                        color: '#DF7861',
                         marginTop: 5,
                         textAlign: 'center',
                         fontWeight: 'bold',
@@ -223,6 +224,24 @@ export const Home = () => {
                       Add to favourits
                     </Text>
                   </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={styles.btn}
+                    onPress={() => {
+                      navigation.navigate('Details', {movie: item}) 
+                    }}>
+                    <Text
+                      style={{
+                        color: '#DF7861',
+                        marginTop: 5,
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                      }}>
+                      Show details
+                    </Text>
+                  </TouchableOpacity>
+                  </View>
+                  
                 </View>
               </ScrollView>
             </LinearGradient>
@@ -281,14 +300,19 @@ const styles = StyleSheet.create({
     color: '#495C83',
   },
   btn: {
-    backgroundColor: '#ABC9FF',
-    width: 125,
+    backgroundColor: 'white',
+    width:'35%',
     height: 35,
     borderRadius: 25,
+    marginTop:'3%',
     borderWidth: 2,
-    borderColor: '#3330E4',
-    marginLeft: 110,
+    borderColor: '#DF7861', 
   },
+  btnContainer:{
+    width:'100%',
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center', },
   goTxt: {
     fontWeight: 'bold',
     textAlign: 'center',

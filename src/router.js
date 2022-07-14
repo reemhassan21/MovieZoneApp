@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 import {Home} from './components/Home.js';
 import {Favourits} from './components/Favourits.js';
-import {Container} from './components/Container.js';
+import { Details } from './components/Details.js';
+import { Main } from './components/Main.js';
 
 const navigator = createNativeStackNavigator();
 
@@ -22,73 +23,12 @@ export const Router = () => {
         <navigator.Screen
           options={{headerShown: false}}
           name="MovieZone"
-          component={({navigation}) => {
-            return (
-              <Container>
-                <StatusBar hidden />
-                <View style={{height: '100%'}}>
-                  <View
-                    style={{
-                      flexDirection: 'column',
-                      width: '100%',
-                      marginTop: '30%',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                    }}>
-                    <Image
-                      style={{
-                        width: '35%',
-                        height: '50%',
-                        marginBottom: '-35%',
-                      }}
-                      source={require('../7.png')}
-                    />
-                    <View style={styles.welcomeBox}>
-                      <Text
-                        style={{
-                          fontSize: 27,
-                          fontWeight: 'bold',
-                          color: '#1F4690',
-                        }}>
-                        Welcome to{' '}
-                      </Text>
-                      <Text
-                        style={{
-                          fontSize: 27,
-                          fontWeight: 'bold',
-                          color: '#DF7861',
-                        }}>
-                        MovieZone
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={styles.container}>
-                    <TouchableOpacity
-                      style={styles.btn}
-                      color="green"
-                      width="20%"
-                      onPress={() => {
-                        navigation.navigate('Home');
-                      }}>
-                      <Text style={styles.btnTxt}>Home</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                      style={styles.btn}
-                      color="green"
-                      width="20%"
-                      onPress={() => {
-                        navigation.navigate('Favourits');
-                      }}>
-                      <Text style={styles.btnTxt}>Favourits</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </Container>
-            );
-          }}
+          component={Main}
         />
         <navigator.Screen name="Home" component={Home} />
         <navigator.Screen name="Favourits" component={Favourits} />
+        <navigator.Screen name="Details" component={Details} />
+
       </navigator.Navigator>
     </NavigationContainer>
   );
